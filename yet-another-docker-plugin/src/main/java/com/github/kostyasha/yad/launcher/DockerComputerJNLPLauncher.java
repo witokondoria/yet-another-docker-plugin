@@ -9,6 +9,7 @@ import com.github.kostyasha.yad_docker_java.com.github.dockerjava.api.command.Cr
 import com.github.kostyasha.yad_docker_java.com.github.dockerjava.api.command.ExecCreateCmdResponse;
 import com.github.kostyasha.yad_docker_java.com.github.dockerjava.api.command.InspectContainerResponse;
 import com.github.kostyasha.yad_docker_java.com.github.dockerjava.api.exception.NotFoundException;
+import com.github.kostyasha.yad_docker_java.com.github.dockerjava.api.model.RestartPolicy;
 import com.github.kostyasha.yad_docker_java.com.github.dockerjava.core.command.ExecStartResultCallback;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.Extension;
@@ -305,6 +306,7 @@ public class DockerComputerJNLPLauncher extends DockerComputerLauncher {
         }
 
         createContainerCmd.withTty(true);
+        createContainerCmd.withRestartPolicy(RestartPolicy.alwaysRestart());
         createContainerCmd.withStdinOpen(true);
     }
 
