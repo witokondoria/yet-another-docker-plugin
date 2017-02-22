@@ -84,7 +84,6 @@ if [ -n "$JAVA_OPTS" ] ; then
 fi
 
 RUN_CMD="$RUN_CMD -jar slave.jar"
-RUN_CMD="$RUN_CMD -noReconnect"
 RUN_CMD="$RUN_CMD$NO_SLAVE_CERT"
 
 if [ -n "$SLAVE_OPTS" ] ; then
